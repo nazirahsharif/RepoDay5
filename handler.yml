@@ -7,7 +7,6 @@
       state: present
     notify:
     - reboot server
-  handlers:
   - name: failing the task
     fail:
       msg: failing the task as testing requires
