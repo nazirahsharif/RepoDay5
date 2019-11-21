@@ -16,6 +16,6 @@
     - name: This is Nazirah
       debug:
         msg: hahahahaa lalalalla
-    - name: This is a task
-      debug:
-        msg: hello world
+  - name: This is a task
+    debug:
+      msg: hello world
