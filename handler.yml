@@ -3,7 +3,7 @@
   tasks:
   - name: Install Dotnet4.6.1
     win_chocolatey:
-      name: winrar
+      name: 7zip
       state: present
     notify:
     - reboot server
@@ -11,7 +11,6 @@
     debug:
       msg: failing the task as testing requires
     failed_when: true
-    ignore_errors: true
   - name: This is another task
     debug:
       msg: final task
