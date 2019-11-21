@@ -1,0 +1,16 @@
+- name: Testing Complex condition with loop
+  hosts: all
+  vars:
+    my_package:
+      - jre8
+      - javaruntime-preventasktoolbar
+      - dropbox
+  tasks:
+    - name: Install packages
+      win_chocolatey:
+        name: "{{ items }}"
+        state: present
+        loop: "{{ my_package }}"
+      when:
+        (ansible_facts['distribution'] == "Microsoft Windows Server 2016 Core" and ansible_facts['architecture'] == "64-bit") and (ansible_facts['date_time'][date]== "2019-11-21" and ansible_facts['date_time'][month] == 11) or ansible_distribution_major_version == 10
+
